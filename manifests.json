@@ -1,0 +1,58 @@
+{
+  "apiVersion": "v1",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "default"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "db",
+        "namespace": "default"
+      },
+      "spec": {
+        "containers": [
+          {
+            "image": "db",
+            "name": "nginx"
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "metadata": {
+        "name": "config",
+        "namespace": "default"
+      },
+      "data": {
+        "NUMBER": "1",
+        "JSON_OBJECT": "{\"a\":1,\"b\":2}",
+        "STRING": "STRING"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "name": "app",
+        "namespace": "default"
+      },
+      "spec": {
+        "containers": [
+          {
+            "image": "app",
+            "name": "nginx"
+          }
+        ]
+      }
+    }
+  ],
+  "kind": "List"
+}

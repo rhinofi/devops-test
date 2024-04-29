@@ -1,0 +1,5 @@
+.terraform
+.direnv
+*.tfstate.*
+*.tfstate
+.terraform
